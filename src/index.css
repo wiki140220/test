@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Manrope", sans-serif;
+
+  --color-primary: #000666;
+  --color-primary-container: #1a237e;
+  --color-secondary: #4355b9;
+  --color-secondary-container: #8596ff;
+  
+  --color-surface: #f7f9fc;
+  --color-surface-bright: #ffffff;
+  --color-surface-container-low: #f2f4f7;
+  --color-surface-container-high: #e6e8eb;
+  --color-surface-container-highest: #e0e3e6;
+  --color-surface-container-lowest: #ffffff;
+
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #454652;
+  --color-outline-variant: rgba(198, 197, 212, 0.15);
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface/40 backdrop-blur-xl border border-white/20;
+  }
+  
+  .vault-gradient {
+    background: linear-gradient(135deg, #000666 0%, #1a237e 100%);
+  }
+
+  .canvas-grid {
+    background-size: 30px 30px;
+    background-image: linear-gradient(to right, rgba(0, 6, 102, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 6, 102, 0.03) 1px, transparent 1px);
+  }
+}
